@@ -1,0 +1,246 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Georgia, serif;
+  background: #16070d;
+  color: #f7e6c5;
+}
+
+
+/* =========================
+   BLOQUEO
+========================= */
+
+#bloqueo {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(
+    145deg,
+    #12060b,
+    #35101f,
+    #17070d
+  );
+
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease,
+    filter 1.2s ease;
+}
+
+#bloqueo.ocultar {
+  opacity: 0;
+  transform: scale(1.08);
+  filter: blur(15px);
+  pointer-events: none;
+}
+
+.caja {
+  width: 90%;
+  max-width: 350px;
+  text-align: center;
+}
+
+.corazon-titulo {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-size: 25px;
+  font-weight: normal;
+  margin: 5px 0 10px;
+}
+
+.pista {
+  color: #cba66e;
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+
+/* =========================
+   FECHA
+========================= */
+
+.fecha {
+  height: 55px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 3px;
+
+  margin-bottom: 28px;
+
+  font-size: 30px;
+  letter-spacing: 3px;
+
+  color: #f7e6c5;
+}
+
+.campo {
+  width: 25px;
+  text-align: center;
+}
+
+.separador {
+  color: #b78a54;
+}
+
+
+/* =========================
+   TECLADO
+========================= */
+
+.teclado {
+  width: 270px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.boton {
+  width: 75px;
+  height: 58px;
+
+  border-radius: 50%;
+  border: 1px solid #8d6138;
+
+  background: rgba(255,255,255,0.04);
+
+  color: #f7e6c5;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition: 0.15s;
+}
+
+.boton:active {
+  transform: scale(0.86);
+  background: rgba(203,166,110,0.25);
+}
+
+.borrar {
+  color: #df8d8d;
+}
+
+.confirmar {
+  color: #bfe0a8;
+}
+
+#error {
+  min-height: 22px;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #df8d8d;
+}
+
+
+/* =========================
+   PÁGINA PRINCIPAL
+========================= */
+
+#pagina {
+  display: none;
+
+  min-height: 100vh;
+
+  padding: 60px 20px;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at top,
+      #561b32,
+      transparent 50%
+    ),
+    linear-gradient(
+      145deg,
+      #16070d,
+      #2d0c19
+    );
+}
+
+.contenido {
+  max-width: 650px;
+  margin: auto;
+}
+
+.subtitulo {
+  color: #cba66e;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: normal;
+  margin: 18px 0;
+}
+
+.nombre {
+  font-size: 29px;
+  color: #dcb477;
+  margin-bottom: 35px;
+}
+
+.mensaje {
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+.fecha-final {
+  margin-top: 35px;
+  color: #cba66e;
+  letter-spacing: 4px;
+}
+
+
+/* =========================
+   CORAZONES
+========================= */
+
+.corazon {
+  position: fixed;
+  bottom: -30px;
+
+  color: #bd5570;
+
+  pointer-events: none;
+
+  animation: subir 7s linear forwards;
+}
+
+@keyframes subir {
+
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
